@@ -1,0 +1,16 @@
+.Form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.form__button {
+  background-color: hsla(78, 92%, 50%, 0.877);
+  border-radius: 4px;
+  color: #36395a;
+  cursor: pointer;
+}
+.form__button:focus {
+  background-color: #36395a;
+
+  color: hsla(78, 92%, 50%, 0.877);
+}
