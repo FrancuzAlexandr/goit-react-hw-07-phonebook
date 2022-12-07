@@ -1,4 +1,4 @@
-import Protypes from 'prop-types';
+import Proptypes from 'prop-types';
 import css from './ContactList.module.css';
 
 export const ContactList = ({ contacts, deleteContact }) => {
@@ -25,12 +25,12 @@ export const ContactList = ({ contacts, deleteContact }) => {
 };
 
 ContactList.propTypes = {
-  contacts: Protypes.arrayOf(
-    Protypes.shape({
-      id: Protypes.string.isRequired,
-      name: Protypes.string.isRequired,
-      number: Protypes.string.isRequired,
+  contacts: Proptypes.arrayOf(
+    Proptypes.shape({
+      id: Proptypes.string.isRequired,
+      name: Proptypes.string.isRequired,
+      number: Proptypes.string.isRequired,
     })
   ).isRequired,
-  deleteContact: Protypes.func.isRequired,
+  deleteContact: Proptypes.func.isRequired,
 };
