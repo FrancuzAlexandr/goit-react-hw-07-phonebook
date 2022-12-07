@@ -1,4 +1,4 @@
-import Protypes, { number } from 'prop-types';
+import Protypes from 'prop-types';
 import css from './ContactList.module.css';
 
 export const ContactList = ({ contacts, deleteContact }) => {
