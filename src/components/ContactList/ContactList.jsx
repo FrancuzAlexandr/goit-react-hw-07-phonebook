@@ -24,7 +24,7 @@ export const ContactList = ({ contacts, deleteContact }) => {
   );
 };
 
-ContactList.prototype = {
+ContactList.propTypes = {
   contacts: Protypes.arrayOf(
     Protypes.shape({
       id: Protypes.string.isRequired,

@@ -10,6 +10,6 @@ export const Filter = ({ onChange }) => {
   );
 };
 
-Filter.prototype = {
+Filter.propTypes = {
   onChange: Proptypes.func.isRequired,
 };
