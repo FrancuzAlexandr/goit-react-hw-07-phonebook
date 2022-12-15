@@ -13,16 +13,20 @@ export function App() {
   ]);
   const [filter, setFilter] = useState('');
 
-  const handleSubmit = (name, number, id = nanoid()) => {
-    contacts.find(item => item.name === name)
-      ? alert(`${name} is already exists`)
-      : setContacts([{ name, number, id }, ...contacts]);
+  const handleSubmit = ({ name, number }) => {
+    if (
+      contacts.find(
+        contact => contact.name.toLocaleLowerCase() === name.toLocaleLowerCase()
+      )
+    ) {
+      alert(`${name} is already exists`);
+      return;
+    }
+    setContacts(prevState => [{ id: nanoid(), name, number }, ...prevState]);
   };
 
   useEffect(() => {
-    if (contacts) {
-      localStorage.setItem('contacts', JSON.stringify(contacts));
-    }
+    window.localStorage.setItem('contacts', JSON.stringify(contacts));
   }, [contacts]);
 
   useEffect(() => {
@@ -43,7 +47,7 @@ export function App() {
   };
 
   const filterContact = contacts.filter(contact =>
-    contact.name.toLocaleLowerCase().includes(filter)
+    contact.name.toLowerCase().includes(filter)
   );
 
   return (
