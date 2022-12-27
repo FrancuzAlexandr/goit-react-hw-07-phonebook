@@ -1,16 +1,24 @@
-.list__button {
-  background-color: hsla(78, 92%, 50%, 0.877);
+.contactList__item {
+  display: flex;
+  justify-content: space-between;
+
+  &:not(:last-child) {
+    margin-bottom: 8px;
+  }
+}
+
+.contactList__button {
+  padding: 4px 16px;
+
+  background-color: #fff;
+  border: 1px solid #000;
   border-radius: 4px;
-  color: #36395a;
-  cursor: pointer;
-}
-.list__button:focus {
-  background-color: #36395a;
 
-  color: hsla(78, 92%, 50%, 0.877);
+  transition: background-color 250ms linear, color 250ms linear;
 }
-.list__button:hover {
-  background-color: #36395a;
+.contactList__button:hover {
+  color: #fff;
 
-  color: hsla(78, 92%, 50%, 0.877);
+  background-color: #1f5ed4;
+  transition: background-color 250ms linear, color 250ms linear;
 }

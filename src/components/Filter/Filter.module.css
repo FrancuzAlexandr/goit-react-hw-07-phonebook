@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter__input {
+  margin-top: 8px;
+}
+
+.button {
+  padding: 4px 16px;
+
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 4px;
+
+  transition: background-color 250ms linear, color 250ms linear;
+  color: red;
+}
+.button:hover {
+  color: #fff;
+
+  background-color: #224fa4;
+  transition: background-color 250ms linear, color 250ms linear;
+}
