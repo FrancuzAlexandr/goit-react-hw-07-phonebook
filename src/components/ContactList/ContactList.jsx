@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { deleteContact } from 'redux/phoneBookSlice';
+import { deleteContact } from 'redux/operationsAPI';
 
 import css from './ContactList.module.css';
 
@@ -9,16 +9,17 @@ export const ContactList = ({ contacts }) => {
 
   return (
     <ul className={css.contactList}>
-      {contacts.map(({ id, name, number }) => {
+      {contacts.map(({ id, name, phone }) => {
         return (
           <li key={id} className={css.contactList__item}>
             <p>
-              {name}: {number}
+              <b>{name}:</b>
+              <br /> {phone}
             </p>
             <button
               className={css.contactList__button}
               type="button"
-              onClick={() => dispatch(deleteContact({ id }))}
+              onClick={() => dispatch(deleteContact(id))}
             >
               Delete
             </button>
@@ -34,7 +35,7 @@ ContactList.propTypes = {
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
-      number: PropTypes.string.isRequired,
+      phone: PropTypes.string.isRequired,
     }).isRequired
   ).isRequired,
 };

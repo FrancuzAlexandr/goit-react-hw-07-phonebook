@@ -25,10 +25,11 @@ form {
 
   transition: background-color 250ms linear, color 250ms linear;
 }
+
 .formSubmit__button:hover {
   color: #fff;
 
-  background-color: #1f5ed4;
+  background-color: #6495ed;
   transition: background-color 250ms linear, color 250ms linear;
 }
 
